@@ -1,0 +1,302 @@
+\documentclass[12pt]{article}
+
+\usepackage{enumitem}
+\usepackage[right=20mm, left=20mm]{geometry}
+\usepackage{type1cm}
+\usepackage{amssymb}
+\usepackage[fleqn]{amsmath}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{makecell}
+\setlength{\columnsep}{1pt}
+\usepackage{pgfplots}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+% \usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{array}
+
+\usepackage{indentfirst}
+\usepackage{lastpage}  
+\usepackage{fancyhdr}
+
+% long table
+\usepackage{longtable}
+\pagestyle{fancy}
+
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+\newenvironment{myalign*}{\ifvmode\else\hfil\null\linebreak\fi
+  \hspace*{-\leftmargin}\minipage\textwidth
+  \setlength{\abovedisplayskip}{0pt}%
+  \setlength{\abovedisplayshortskip}{\abovedisplayskip}%
+  \start@align\@ne\st@rredtrue\m@ne}%
+{\endalign\endminipage\linebreak}
+
+% Paper size
+\topmargin -10mm
+\textwidth 170mm
+% \oddsidemargin -5mm
+% \evensidemargin -5mm
+\textheight 220mm
+
+% Font setting
+\usepackage{xeCJK}
+% \setCJKmainfont{Noto Sans TC}
+\setCJKmainfont{kaiu.ttf}
+
+
+\renewcommand{\footnotesize}{\normalsize} 
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\lhead{}
+\chead{2023年全國大專校院智慧創新暨跨域整合創作競賽系統需求書}
+\rhead{}
+
+\lfoot{}
+\cfoot{}
+\rfoot{ 共 \pageref{LastPage} 頁 第  \thepage   頁} 
+
+\makeatletter
+\begin{document}
+% \fontsize{14pt}{18pt}\selectfont
+% \author{}
+\date{}
+\usetikzlibrary{automata, positioning, arrows}
+% \maketitle
+\tikzset{every state, accepting/.style={double distance=2pt}}
+\captionsetup[figure]{labelfont={bf},name={圖},labelsep=period}
+\renewcommand{\arraystretch}{1.45}
+
+\noindent
+\textbf{參賽隊名：} TraTracker \\
+\textbf{作品名稱：} 旅遊紀錄整理工具 \\
+\textbf{系統名稱：} TravelTracker
+
+\section{系統目的與範圍}
+
+\section{系統非功能需求}
+
+\begin{longtable}{|c|p{5.2cm}|p{7.5cm}|}
+  \hline
+  \textbf{非功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{非功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endhead
+  []-NF-01 & {} & {} \\
+  \hline
+\end{longtable}
+
+\section{系統功能需求}
+
+\begin{itemize}
+  \item 旅程：包含一次旅遊的所有軌跡、旅遊資料
+  \item 軌跡：使用者用GPS記錄的路徑
+  \item 旅遊資料：照片、影片、錄音、文字等多媒體
+\end{itemize}
+
+\subsection{記錄功能 RC}
+
+\begin{longtable}{|c|p{4.3cm}|p{8.9cm}|}
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endhead
+  TT-F-RC-01 & 記錄軌跡 & 使用者可以通過 GPS 記錄旅程軌跡 \\
+  \hline
+  TT-F-RC-02 & 暫停記錄軌跡 & 允許使用者暫停記錄旅程軌跡 \\
+  \hline
+  TT-F-RC-03 & 從APP開啟相機 & 使用者可以直接從應用程式開啟相機進行拍照 \\
+  \hline
+  TT-F-RC-04 & 從APP錄音 & 使用者可以直接從應用程式開啟麥克風進行錄音 \\
+  \hline
+  TT-F-RC-05 & 記錄文字 & 允許使用者記錄文字內容，如日記或心得 \\
+  \hline
+  TT-F-RC-06 & 快速記錄 & 使用者可以通過桌面小工具或通知列快速記錄文字、錄音等等 \\
+  \hline
+  TT-F-RC-07 & 自動抓取媒體資料 & 自動從手機的相簿或其他媒體資料夾中抓取相關旅遊媒體資料 \\
+  \hline
+\end{longtable}
+
+\subsection{檢視軌跡與旅遊資料 RV}
+
+\begin{longtable}{|c|p{4.3cm}|p{8.9cm}|}
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endhead
+  TT-F-RV-01 & 地圖上顯示軌跡 & 在地圖上展示使用者的旅程軌跡 \\
+  \hline
+  TT-F-RV-02 & 軌跡上顯示旅遊資料 & 軌跡上顯示旅遊相關資料，如照片、影片、文字等 \\
+  \hline
+  TT-F-RV-03 & 地圖旁以時間軸方式顯示旅遊資料 & 旅遊資料以時間軸形式展示，方便查看 \\
+  \hline
+  TT-F-RV-04 & 格狀顯示旅遊資料 & 使用者能切換到格狀頁面檢視旅遊資料 \\
+  \hline
+  TT-F-RV-05 & 條列式詳細顯示旅遊資料 & 使用者能切換到條列式頁面，以便於檢視旅遊資料的詳細內容 \\
+  \hline
+  TT-F-RV-06 & 檢視個別旅遊資料 & 查看單一旅遊資料的詳細資訊 \\
+  \hline
+  TT-F-RV-07 & 利用標籤、日期等項目篩選旅遊資料 & 根據日期、標籤等條件篩選和搜尋旅遊資料 \\
+  \hline
+  TT-F-RV-08 & 用地理位置篩選旅遊資料 & 一次選取某個位置周圍的旅遊資料 \\
+  \hline
+  TT-F-RV-09 & 與AI對話來篩選旅遊資料 & 通過AI對話界面協助篩選旅遊資料 \\
+  \hline
+\end{longtable}
+
+\subsection{編輯軌跡與旅遊資料 WR}
+
+\begin{longtable}{|c|p{4.3cm}|p{8.9cm}|}
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endhead
+  TT-F-WR-01 & 將軌跡平滑化 & 將記錄的軌跡進行平滑處理，使之更符合實際路線 \\
+  \hline
+  TT-F-WR-02 & 拉伸軌跡 & 允許使用者手動調整軌跡的形狀 \\
+  \hline
+  TT-F-WR-03 & 自動偵測軌跡停留位置並縮成點 & 能自動識別軌跡中的停留位置，並將其 GPS 誤差造成的一團路徑簡化為一個點 \\
+  \hline
+  TT-F-WR-04 & 編輯旅遊資料的標籤 & 允許使用者為旅遊資料添加或修改標籤 \\
+  \hline
+  TT-F-WR-05 & 編輯旅遊資料的日期 & 允許使用者為旅遊資料添加或修改日期 \\
+  \hline
+  TT-F-WR-06 & 刪除旅遊資料 & 允許使用者刪除指定的旅遊資料 \\
+  \hline
+  TT-F-WR-07 & 批量處理旅遊資料 & 選取多個旅遊資料並一起編輯或刪除 \\
+  \hline
+  TT-F-WR-08 & 與AI對話來選取、編輯、刪除旅遊資料 & 通過AI對話協助選取、編輯或刪除旅遊資料 \\
+  \hline
+  TT-F-WR-09 & AI自動辨識並標記照片 & AI會自動分析並標記照片中的物體或景物 \\
+  \hline
+\end{longtable}
+
+\subsection{地圖視圖控制 MC}
+
+\begin{longtable}{|c|p{4.3cm}|p{8.9cm}|}
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endhead
+  TT-F-MC-01 & 基礎控制動作 & 使用者可以縮放、移動、旋轉地圖 \\
+  \hline
+  TT-F-MC-02 & 定位至目前位置 & 讓使用者能快速定位到當前位置 \\
+  \hline
+  TT-F-MC-03 & 定位至指定旅遊資料 & 允許使用者快速定位至特定旅遊資料 \\
+  \hline
+  TT-F-MC-04 & 定位至指定軌跡 & 允許使用者快速定位至特定軌跡 \\
+  \hline
+  TT-F-MC-05 & 地圖樣式選擇 & 使用者可以選擇不同的地圖主題和樣式，如魯地圖、OpenStreetMap、夜間模式、衛星圖像等 \\
+  \hline
+  TT-F-MC-06 & 離線地圖 & 使用者可以下載地圖，以便在沒有網路的情況下使用 \\
+  \hline
+\end{longtable}
+
+\subsection{資料匯入、匯出 EP}
+
+\begin{longtable}{|c|p{4.3cm}|p{8.9cm}|}
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endhead
+  TT-F-EP-01 & 匯出旅程、軌跡、旅遊資料 & 允許使用者將各式資料匯出為特定格式的檔案 \\
+  \hline
+  TT-F-EP-02 & 匯入旅程、軌跡、旅遊資料 & 允許使用者將各式資料匯入，並且能根據軌跡的時間戳記從手機內自動讀取相應的媒體 \\
+  \hline
+\end{longtable}
+
+\subsection{旅程管理 TM}
+
+\begin{longtable}{|c|p{4.3cm}|p{8.9cm}|}
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endhead
+  TT-F-TM-01 & 創建新旅程 & 允許使用者創建新的旅程 \\
+  \hline
+  TT-F-TM-02 & 切換目前記錄旅程\footnote[1] & 允許使用者切換正在記錄的旅程 \\
+  \hline
+  TT-F-TM-03 & 切換目前顯示旅程 & 允許使用者選擇目前正在顯示的旅程以方便查看 \\
+  \hline
+  TT-F-TM-04 & 一鍵回到目前旅程 & 允許使用者快速將當前記錄中的旅程做為顯示中的旅程 \\
+  \hline
+  TT-F-TM-05 & 旅程重新命名 & 允許使用者對旅程進行重新命名 \\
+  \hline
+  TT-F-TM-06 & 顯示旅程總距離、時間等等 & 提供使用者查看旅程的總距離和時間等資訊，以便了解整體旅程的概況 \\
+  \hline
+\end{longtable}
+
+\footnotetext[1]{顯示中與記錄中的旅程是獨立的，為了讓使用者可以在記錄B旅遊時回去看A旅遊的資料}
+
+  
+\section{一般性的系統功能操作使用案例之劇本(Scenario)}
+
+\begin{longtable}{|c|p{12.5cm}|}
+  \hline
+  \textbf{使用者案例} & \textbf{TT-UC-{}（請填入相應數字）} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{使用者案例} & \textbf{TT-UC-{}（請填入相應數字）} \\
+  \hline
+  \endhead
+  \textbf{requirment} & 上傳影片功能、上傳頭像功能 \\
+  \hline
+  \textbf{案例名稱} & 上傳影片及頭像 \\
+  \hline
+  \textbf{使用者} & 一般使用者 \\
+  \hline
+  \textbf{前置條件} & 無 \\
+  \hline
+  \textbf{說明} & 使用者能夠上傳演講影片及頭像照片 \\
+  \hline
+  \textbf{描述} & 1. 使用者開啟 slidetalker 網頁 \\
+               & 2. 滾輪到編輯區或點擊 "開始創建" 的按鈕 \\
+               & 3. 點選上傳影片和上傳圖片按鈕選擇演講影片及頭像圖片 \\
+  \hline
+  \textbf{例外處理} & 如果上傳的影片格式不支援，系統會提示使用者選擇支援的影片格式。 \\
+                    & 如果上傳的頭像圖片格式不支援，系統會提示使用者選擇支援的圖片格式。 \\
+                    & 如果上傳的影片或頭像圖片大小超過限制，系統會提示使用者壓縮或選擇較小的檔案。 \\
+  \hline
+  \textbf{測試方案} & 1. 使用者上傳一個非支援的影片格式（例如：GIF），確認系統是否提示選擇支援的影片格式。 \\
+                    & 2. 使用者上傳一個非支援的圖片格式（例如：TIFF），確認系統是否提示選擇支援的圖片格式。 \\
+                    & 3. 使用者上傳一個超過限制大小的影片檔案，確認系統是否提示壓縮或選擇較小的檔案。 \\
+                    & 4. 使用者上傳一個超過限制大小的圖片檔案，確認系統是否提示壓縮或選擇較小的檔案。 \\
+  \hline
+\end{longtable}
+
+\end{document}
