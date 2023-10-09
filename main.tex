@@ -2,12 +2,12 @@
 
 % 能使用 itemize、enumerate
 \usepackage{enumitem}
-\usepackage{enumitem}
 \setlist[itemize]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
 \setlist[itemize,2]{label=$\circ$, noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt, parsep=0.5em, partopsep=0pt}
 
 % 設定頁面邊界
-\usepackage[right=20mm, left=20mm]{geometry}
+\usepackage[right=20mm, left=20mm, top=30mm, bottom=20mm]{geometry}
 % \usepackage[right=20mm, left=20mm, top=20mm, bottom=20mm, headheight=0pt, headsep=20pt]{geometry}
 
 % 設定 type1 字型，基於 Bezier 曲線
@@ -33,11 +33,15 @@
 % \usepackage{makecell}
 % \setlength{\columnsep}{1pt}
 % \usepackage{pgfplots}
-% \usepackage{float}
-% \usepackage{caption}
-% \usepackage{subcaption}
 % % \usepackage{subfig}
-% \usepackage{graphicx}
+
+% 顯示圖片
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup[figure]{name={圖},labelsep=period}
+
 
 % 章節首段縮排
 \usepackage{indentfirst}
@@ -94,9 +98,11 @@
 
 % \titleformat{\section}{\centering\Large\bfseries}{}{0em}{}[\titlerule]
 % \titlespacing*{\section}{0pt}{0em}{1em}
+\titlespacing{\section}{0pt}{0em}{0em}
 
-\titleformat{\subsection}{\centering\large\bfseries}{}{0em}{}[]
-\titlespacing*{\subsection}{0pt}{0em}{0em}
+% \titleformat{\subsection}{\centering\large\bfseries}{}{0em}{}[]
+% \titlespacing*{\subsection}{0pt}{0em}{0em}
+\titlespacing{\subsection}{0pt}{0em}{0em}
 
 \titlespacing*{\subsubsection}{0pt}{0em}{0em}
 
@@ -140,12 +146,14 @@
 
 \newpage
 
-% \input{section/autobiography.tex}
-% \input{section/award.tex}
-% \input{section/project_report.tex}
-% \input{section/relevant_experience.tex}
-% \input{section/motivation.tex}
-% \input{section/study_plan.tex}
-% \input{section/research_proposal.tex}
+\input{section/abstract/main.tex}
+
+\input{section/objective/main.tex}
+
+\input{section/methodology/main.tex}
+
+\input{section/results/main.tex}
+
+\input{section/references/main.tex}
 
 \end{document}
