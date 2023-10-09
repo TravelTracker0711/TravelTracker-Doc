@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build latex",
+      "type": "shell",
+      "command": "docker run --rm -v %cd%:/data/ moss/xelatex make",
+      "problemMatcher": []
+    }
+  ]
+}

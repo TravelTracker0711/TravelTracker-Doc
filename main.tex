@@ -1,0 +1,151 @@
+\documentclass[12pt]{article}
+
+% 能使用 itemize、enumerate
+\usepackage{enumitem}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+\setlist[itemize,2]{label=$\circ$, noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+
+% 設定頁面邊界
+\usepackage[right=20mm, left=20mm]{geometry}
+% \usepackage[right=20mm, left=20mm, top=20mm, bottom=20mm, headheight=0pt, headsep=20pt]{geometry}
+
+% 設定 type1 字型，基於 Bezier 曲線
+\usepackage{type1cm}
+
+% 數學符號
+% \usepackage{amssymb}
+% \usepackage[fleqn]{amsmath}
+
+% 繪製圖形
+% \usepackage{tikz}
+
+% 多欄排版
+\usepackage{multicol}
+
+% 設定區域行距
+\usepackage{setspace}
+
+% 設定段落行距
+\setlength{\parskip}{1em}
+
+% 都是圖表的東西
+% \usepackage{makecell}
+% \setlength{\columnsep}{1pt}
+% \usepackage{pgfplots}
+% \usepackage{float}
+% \usepackage{caption}
+% \usepackage{subcaption}
+% % \usepackage{subfig}
+% \usepackage{graphicx}
+
+% 章節首段縮排
+\usepackage{indentfirst}
+
+% 頁碼
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+
+\lhead{Travel Tracker - 旅遊紀錄整理工具}
+\chead{}
+\rhead{鄧暐宣、簡蔚驊、蔡維軒、黃怡瑄}
+
+\lfoot{}
+\cfoot{}
+\rfoot{ 共 \pageref{LastPage} 頁 第  \thepage   頁} 
+
+% 超連結、目錄跳轉
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+
+% 英文字體設定
+\usepackage{fontspec}
+\setmainfont[
+  Path=font/,
+  UprightFont={Calibri Regular.ttf},
+  BoldFont={Calibri Bold.ttf},
+  ItalicFont={Calibri Italic.ttf},
+  BoldItalicFont={Calibri Bold Italic.ttf},
+  FontFace={l}{n}{Calibri Light.ttf},
+  FontFace={l}{it}{Calibri Light Italic.ttf}
+]{Calibri}
+% 中文字體設定
+\usepackage{xeCJK}
+% \setCJKmainfont[
+%   Path=font/,
+%   Extension=.ttc,
+%   UprightFont={msjh},
+%   BoldFont={msjhbd}
+% ]{微軟正黑體}
+\setCJKmainfont[Path=font/, UprightFont={kaiu.ttf}]{標楷體}
+
+% 大標題樣式
+\usepackage{titling}
+
+\preauthor{\begin{flushright}\normalsize}
+\postauthor{\end{flushright}}
+
+% 標題樣式
+\usepackage{titlesec}
+
+% \titleformat{\section}{\centering\Large\bfseries}{}{0em}{}[\titlerule]
+% \titlespacing*{\section}{0pt}{0em}{1em}
+
+\titleformat{\subsection}{\centering\large\bfseries}{}{0em}{}[]
+\titlespacing*{\subsection}{0pt}{0em}{0em}
+
+\titlespacing*{\subsubsection}{0pt}{0em}{0em}
+
+% 目錄樣式
+\usepackage{titletoc}
+
+% \titlecontents{section}[0em]{\setstretch{1.5}\bfseries}{\hspace{0em}}{}{\titlerule*[0.5pc]{.}\contentspage}
+
+% 目錄名稱
+\renewcommand{\contentsname}{目錄}
+
+% 字體顏色
+\usepackage{xcolor}
+
+% \let\originaltextbf\textbf
+% \renewcommand{\textbf}[1]{\originaltextbf{\textcolor{red}{#1}}}
+\newcommand{\textbfred}[1]{\textcolor{red}{\textbf{#1}}}
+
+%%%%%%%%%% 文件開始 %%%%%%%%%%
+\begin{document}
+
+% tikz 繪圖設定
+% \usetikzlibrary{automata, positioning, arrows}
+% \tikzset{every state, accepting/.style={double distance=2pt}}
+
+% caption 設定
+% \captionsetup[figure]{labelfont={bf},name={圖},labelsep=period}
+
+% 標題
+% 設定標題、作者、日期
+\title{}
+\author{}
+\date{}
+% \maketitle
+\thispagestyle{fancy}
+
+\setstretch{1.4}
+
+% 目錄(TOC)
+\tableofcontents
+
+\newpage
+
+% \input{section/autobiography.tex}
+% \input{section/award.tex}
+% \input{section/project_report.tex}
+% \input{section/relevant_experience.tex}
+% \input{section/motivation.tex}
+% \input{section/study_plan.tex}
+% \input{section/research_proposal.tex}
+
+\end{document}

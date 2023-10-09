@@ -1,0 +1,223 @@
+\documentclass[12pt]{article}
+
+\usepackage{enumitem}
+\usepackage[right=20mm, left=20mm]{geometry}
+\usepackage{type1cm}
+\usepackage{amssymb}
+\usepackage[fleqn]{amsmath}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{makecell}
+\setlength{\columnsep}{1pt}
+\usepackage{pgfplots}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+% \usepackage{subfig}
+\usepackage{graphicx}
+
+\usepackage{indentfirst}
+\usepackage{lastpage}  
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{pgfgantt}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+\newenvironment{myalign*}{\ifvmode\else\hfil\null\linebreak\fi
+  \hspace*{-\leftmargin}\minipage\textwidth
+  \setlength{\abovedisplayskip}{0pt}%
+  \setlength{\abovedisplayshortskip}{\abovedisplayskip}%
+  \start@align\@ne\st@rredtrue\m@ne}%
+{\endalign\endminipage\linebreak}
+
+% Paper size
+\topmargin -10mm
+\textwidth 170mm
+% \oddsidemargin -5mm
+% \evensidemargin -5mm
+\textheight 220mm
+
+% Font setting
+\usepackage{xeCJK}
+% \setCJKmainfont{Noto Sans TC}
+\setCJKmainfont{kaiu.ttf}
+
+
+\renewcommand{\footnotesize}{\normalsize} 
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\lhead{}
+\chead{2023年全國大專校院智慧創新暨跨域整合創作企劃書}
+\rhead{}
+
+\lfoot{}
+\cfoot{}
+\rfoot{ 共 \pageref{LastPage} 頁 第  \thepage   頁} 
+
+\makeatletter
+\begin{document}
+% \fontsize{14pt}{18pt}\selectfont
+% \author{}
+\date{}
+\usetikzlibrary{automata, positioning, arrows, shapes, fit}
+% \maketitle
+\tikzset{every state, accepting/.style={double distance=2pt}}
+\tikzstyle{block} = [rectangle, draw, fill=white, 
+    text centered, rounded corners, minimum height=2em]
+\tikzstyle{container} = [rectangle, draw, dashed, inner sep=2em]
+\tikzstyle{line} = [draw, -latex']
+\captionsetup[figure]{labelfont={bf},name={圖},labelsep=period}
+\setlist[itemize]{itemsep=0pt,topsep=0pt,parsep=0pt}
+\setlist[enumerate]{itemsep=0pt,topsep=4pt,parsep=0pt}
+\setlength{\parindent}{2em}
+
+\noindent
+\textbf{參賽隊名：} TraTracker \\
+\textbf{作品名稱：} 旅遊紀錄整理工具 \\
+\textbf{競賽主題：} 體感互動科技組
+
+\section{創作主題}
+
+\subsection{題目：TravelTracker - AI對話旅遊紀錄整理工具}
+
+\subsection{實用功能描述}
+
+在旅程途中我們常會使用手機來記錄每趟旅行的點點滴滴，用照片、影片或是文字等載體保留旅程途中的美好回憶。但在旅遊中不會想花太多時間在記錄上，而且旅遊結束的資料量都很可觀，人工整理會耗費相當多的時間。
+
+因此，TravelTracker針對旅遊記錄、整理的不便，提供使用者便捷的解決方案。使用者可以透過本APP快速記錄軌跡、影像與文字等旅遊資料，我們也會自動從手機載入影像，並在根據影像的拍攝時間，搭配軌跡資訊推算拍攝地點，並提供以拍攝地點分組旅遊資料的整理方式，讓使用者能更快速地找到旅遊途中的美好記錄。
+
+此外，Travel Tracker也提供AI辨識的方式標記圖片類別，讓使用者能快速找到相對應的圖片。最後，Travel Tracker更結合AI對話技術，讓使用者可以輕鬆透過口語與AI對話，快速地整理旅遊中的資料。
+
+\subsection{作品與市場相關產品差異}
+
+本團隊開發之 TravelTracker 與市面上相關旅遊記錄工具主要有以下差異：
+
+\begin{enumerate}
+    \item 其他旅遊記錄工具在整理、編輯或查找資料時主要以手動的方式，當很多資料時會很繁雜。而 TravelTracker 會透過 AI 初步標記圖像，並以與 AI 對話的方式查找、編輯旅遊資料，讓使用者能輕鬆地整理旅遊資料。
+    \item 市面上的旅遊記錄工具大多只能單純記錄影像，並按時間軸條列式呈現旅遊資料。而TravelTracker則是利用拍攝地點來分組並整理旅遊資料，讓使用者能更快速地依照旅遊地點找到想要的回憶。
+    \item 其他旅遊記錄工具很少會同時支援照片、影片、錄音、文字等各式種類的資料，像是山林日誌、健行筆記、Gaia等旅遊記錄APP在記錄中只有相片記錄功能，缺乏影片記錄方式，而Google map+相簿在記錄旅遊資料時，只能在電腦版上編輯文字，無法在APP上新增。因此，本APP將同時支援使用者以相片、影片、文字、錄音的方式來記錄旅遊中的美好。
+\end{enumerate}
+
+\section{創意構想}
+
+\subsection{理論基礎}
+
+旅途中應該要好好享受旅程，而不是花時間在新增、整理資料上
+照片很多很雜，同個地點拍的照片容易有關連，可以分組
+常常會想找某個資料找很久，透過AI協助在照片海中找尋資料
+
+\subsection{設計創新說明}
+
+本工具創新地使用地圖作為照片整理的主要界面，並通過AI技術分析照片內容進行自動標記。除此之外，強調直觀且易於操作的設計也是其創新之處
+
+\subsection{特殊功能描述}
+
+特殊功能包括AI自動辨識並標記照片、地圖上的軌跡顯示、時間軸方式顯示旅遊資料、批量處理旅遊資料等。這些功能共同使TravelTracker成為一個強大的旅遊紀錄整理工具。
+
+\section{系統架構}
+
+\subsection{架構說明}
+
+TravelTracker採用多層架構，包括用戶界面層、業務邏輯層、資料存取層和資料庫層。每一層都有其特定的功能和責任，共同支持整個系統的運作。
+
+\subsection{「人機介面設計」（UI）與「使用者體驗」（UX）設計}
+
+
+TravelTracker的UI設計強調簡潔和直觀，以使操作更為快速方便。UX則著重於用戶的整體體驗，包括美觀的視覺設計、流暢的互動和符合使用者需求的功能。整體設計旨在提供一個愉悅和高效的使用體驗。
+
+\section{計劃管理}
+
+% \begin{table}[H]      
+%   \centering
+%   \begin{tabular}{|c|c|p{13cm}|}
+%     \hline
+%     工作階段 & 工作日數 & 工作內容 \\ \hline
+%     第一階段 & 14日 & 創意發想、需求分析與規劃階段：\newline  
+%       1. 用戶需求收集及分析、功能需求深度討論、市場分析。\newline
+%       2. 根據需求選定技術、設計資料結構及資料庫模型。\newline
+%       3. 開發計劃與時間表的制定及製作專案介紹。\\ \hline
+%     第二階段 & 14日 & 設計階段：\newline
+%       1. 繪製系統架構圖，撰寫技術設計文檔。\newline
+%       2. 設計前後端介面。\newline
+%       3. 研究直播系統的工作原理、Judge 系統的實現方式。\\ \hline
+%     第三階段 & 21日 & 系統開發與文件準備階段：\newline
+%       1. 前後端開發：\newline
+%       - 前端：實現教師的章節編輯頁及教學頁面的互動式講義等。\newline
+%       - 後端：開發API，完成基礎CRUD、websocket，部屬docker。\newline
+%       2. 文件與影片製作\newline
+%       3. 整理產品的用戶故事和場景。 \\ \hline    
+%     第四階段 & 21日 & 功能開發與初步測試階段：\newline
+%      1. 前後端功能開發：\newline
+%      - 前端：完成互動式講義編輯頁面、教學頁面的工具欄等主要功能。\newline
+%      - 後端：完成直播系統、Judge系統的開發，並將系統部署到服務器。\newline
+%      2. 初步功能測試及撰寫開發者文件 \\ \hline
+%     第五階段 & 21日 & 使用者測試與優化階段：\newline
+%      1. 進行使用者測試訪談並收集反饋，了解使用過程中遇到的問題。\newline
+%      2. 根據收集的數據與反饋進行分析，找出需要改進的部分。\newline
+%      3. 根據分析結果對系統進行優化和調整。 \\ \hline
+%     第六階段 & 21日 & 最終測試與優化階段：\newline
+%      1. 進行完整系統測試，包括功能、性能、安全等方面。\newline
+%      2. 根據測試結果進行系統性能優化。\newline
+%      3. 撰寫與記錄測試過程和結果的設計測試文件。 \\ \hline
+%     第七階段 & 8日  & 準備決賽階段：\newline
+%      1. 撰寫系統使用手冊。\newline
+%      2. 準備決賽所需的各種材料和準備工作。 \\ \hline
+%   \end{tabular}
+%   \caption{計劃管理}
+% \end{table}
+
+% \begin{figure}[H]
+%   \centering
+%   \begin{ganttchart}[
+%     y unit title=0.6cm,
+%     y unit chart=0.7cm,
+%     x unit=0.7cm,
+%     vgrid,hgrid, 
+%     title height=1,
+%     progress label text={},
+%     bar height=0.8,
+%     bar top shift=0.1,
+%     ]{1}{18} % 按照您的計劃，我們有約 18 週的時間。
+%     %labels
+%     \gantttitlelist{1,...,18}{1} \\ % 生成 1 到 18 的標籤
+    
+%     %tasks
+%     \ganttbar{工作階段 1}{1}{2} \\
+%     \ganttbar{工作階段 2}{3}{4} \\
+%     \ganttbar{工作階段 3}{5}{7} \\
+%     \ganttbar{工作階段 4}{8}{10} \\
+%     \ganttbar{工作階段 5}{11}{13} \\
+%     \ganttbar{工作階段 6}{14}{16} \\
+%     \ganttbar{工作階段 7}{17}{18}
+%   \end{ganttchart}
+%   \caption{工作階段的甘特圖}  
+% \end{figure}
+
+\section{修改舊作參賽說明}
+  本專案開發之作品未使用團隊成員曾獲競賽獎勵之作品。
+\section{軟體清單}
+\begin{itemize}
+  \item 作業系統環境：Windows、MacOS
+  \item 主要開發程式語言：Dart
+  \item 專案支援語言：中文
+  \item 開發環境：
+  \begin{itemize}
+    \item Android
+    \item IOS
+    \item Visual Studio Code
+    \item Flutter
+    \item Git, Github
+  \end{itemize}
+  \item 專案成果預定授權條款：本專案開發產品授權條款使用 BSD 3-Clause 宣告。
+\end{itemize}
+
+\section{權力分配}
+依著作權法第 40 條之規定，由參賽學生與指導教授均等共有。
+
+\end{document}
