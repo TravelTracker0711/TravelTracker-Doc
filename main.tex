@@ -46,6 +46,11 @@
 % 章節首段縮排
 \usepackage{indentfirst}
 
+% 設定首行縮排
+\newlength{\fullwidthspace}
+\setlength{\fullwidthspace}{2em}  % 定義兩個全形空白的長度為2em
+\setlength{\parindent}{\fullwidthspace}  % 設定段落首行縮排為兩個全形空白
+
 % 頁碼
 \usepackage{lastpage}
 \usepackage{fancyhdr}
