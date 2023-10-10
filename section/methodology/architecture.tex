@@ -1,13 +1,8 @@
 \subsection{架構設計}
 
+我們使用 Flutter 作為開發框架，其具備跨平台的能力以及豐富的 UI 庫，讓我們能夠同時在 Android、iOS 及 Web 平台建置系統，並方便實現各種客製化的介面效果。
+
 我們參考了 Clean architecture 與 MVVM 來設計架構，引入依賴反轉、雙向數據綁定等特性，旨在減少模組之間的依賴與增加可重用性，使得各部分能獨立開發和測試，並使得未來對系統的修改和擴展更為容易。此外，明確的架構和分層可以幫助團隊成員更快地瞭解專案結構，並減少彼此之間的工作衝突。
-
-我們定義了兩種資料容器：
-
-\begin{enumerate}
-    \item Entity：作為系統中的主要資料容器，包含旅程、軌跡、座標點等核心資料。
-    \item QueryItem：向外部資料庫（如SQL）請求所獲得的原始結果，格式與資料表的定義相同。
-\end{enumerate}
 
 \begin{figure}[H]
     \centering
@@ -16,28 +11,41 @@
     \label{分層依賴圖}
 \end{figure}
 
-我們將系統架構分為 Use Case、Repository、Data Source、View Model 和 UI 五層，圖~\ref{分層依賴圖} 為分層依賴圖，展示了各層內部的元件與依賴關係，以下將對各層進行詳細說明。
+我們將系統架構分為 Use Case、Repository、Data Source、View Model 和 UI 共五層，分別負責業務邏輯、數據調用、與數據來源溝通、管理 UI 狀態以及呈現使用者介面。圖~\ref{分層依賴圖} 為分層依賴圖，展示了各層內部的元件與依賴關係。
 
-\begin{enumerate}
+\begin{itemize}
+    \item 資料容器：Entity 為系統中的主要資料結構包含旅程、軌跡、座標點等核心資料，而 QueryItem 為向外部資料庫（如SQL）請求所獲得的原始結果，其欄位與資料表的定義相同
+    \item 抽象介面：我們在上層定義下層的介面，並讓下層實作，來達到依賴反轉的目的，如 Repository 與 Data Source 的抽象介面。
+    \item 雙向綁定：利用 Flutter 的 ChangeNotifier 實作 MVVM 架構，將 View Model 與 UI 進行雙向數據綁定，並透過 Use Case 處理業務邏輯和數據操作。
+\end{itemize}
 
-    \item Use Case 層：
+% 我們定義了兩種資料容器：
 
-    負責業務邏輯的處理，使用 Entity 作為資料容器。當 View Model 發起請求時，Use Case 會根據需求，調用 Repository 來獲得或操作數據。該層也定義了抽象的 Repository 介面。
+% \begin{enumerate}
+%     \item Entity：作為系統中的主要資料容器，包含旅程、軌跡、座標點等核心資料。
+%     \item QueryItem：向外部資料庫（如SQL）請求所獲得的原始結果，格式與資料表的定義相同。
+% \end{enumerate}
 
-    \item Repository 層：
+% \begin{enumerate}
 
-    實作 Use Case 層定義的介面，負責從 Data Source 調用數據，取得 QueryItem 後轉換成 Entity 格式回傳給 Use Case。該層也定義了抽象的 Data Source 介面。
+%     \item Use Case 層：
 
-    \item Data Source 層：
+%     負責業務邏輯的處理，使用 Entity 作為資料容器。當 View Model 發起請求時，Use Case 會根據需求，調用 Repository 來獲得或操作數據。該層也定義了抽象的 Repository 介面。
 
-    負責實際的數據存取。根據 Repository 的請求，Data Source 會去操作實際的數據來源，如資料庫、遠端服務或記憶體暫存等等，並以 QueryItem 作為回傳結果。
+%     \item Repository 層：
 
-    \item View Model 層：
+%     實作 Use Case 層定義的介面，負責從 Data Source 調用數據，取得 QueryItem 後轉換成 Entity 格式回傳給 Use Case。該層也定義了抽象的 Data Source 介面。
 
-    該層為 MVVM 架構中的一部分，透過 Flutter 的 ChangeNotifier 實作。負責管理 UI 所需的狀態和邏輯。它會和 UI 進行雙向數據綁定，並透過 Use Case 處理業務邏輯和數據操作。
+%     \item Data Source 層：
 
-    \item UI 層：
+%     負責實際的數據存取。根據 Repository 的請求，Data Source 會去操作實際的數據來源，如資料庫、遠端服務或記憶體暫存等等，並以 QueryItem 作為回傳結果。
 
-    主要負責呈現使用者介面與互動。所有的 UI 元件都在這一層並組合成頁面，再透過 View Model 來獲得及顯示必要的數據。
+%     \item View Model 層：
 
-\end{enumerate}
+%     該層為 MVVM 架構中的一部分，透過 Flutter 的 ChangeNotifier 實作。負責管理 UI 所需的狀態和邏輯。它會和 UI 進行雙向數據綁定，並透過 Use Case 處理業務邏輯和數據操作。
+
+%     \item UI 層：
+
+%     主要負責呈現使用者介面與互動。所有的 UI 元件都在這一層並組合成頁面，再透過 View Model 來獲得及顯示必要的數據。
+
+% \end{enumerate}
