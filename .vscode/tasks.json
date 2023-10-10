@@ -6,6 +6,12 @@
       "type": "shell",
       "command": "docker run --rm -v %cd%:/data/ moss/xelatex make",
       "problemMatcher": []
+    },
+    {
+      "label": "latex word count",
+      "type": "shell",
+      "command": "docker run --rm -v %cd%:/data/ latex-word-count make word-count",
+      "problemMatcher": []
     }
   ]
 }
