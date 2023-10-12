@@ -48,7 +48,6 @@
 \renewcommand{\footnotesize}{\normalsize} % 設定腳註字型大小
 \renewcommand{\headrulewidth}{0pt} % 不要有頁首橫線
 \renewcommand{\footrulewidth}{0pt} % 不要有頁尾橫線
-
 \lhead{}
 \chead{2023年全國大專校院智慧創新暨跨域整合創作競賽 - 作品測試文件}
 \rhead{}
@@ -58,8 +57,8 @@
 
 \begin{document}
 
-% \makeatletter % 設定目錄字型大小
-% \tableofcontents % 目錄
+\tableofcontents % 目錄
+\newpage
 
 % 標題
 % \title{}
@@ -80,17 +79,24 @@
 \input{usecase/usecase.tex}
 
 % 系統架構設計
+\input{sysarc/sysarc.tex}
 
 % 系統介面設計
+\input{ui/ui.tex}
 
 % 軟體或硬體架構設計
+\input{arc/arc.tex}
 
 % 軟體或硬體模組設計
+\input{mod/mod.tex}
 
 % 軟體或硬體開發環境
+\input{env/env.tex}
 
 % 系統測試案例設計
+\input{testcase/testcase.tex}
 
 % 系統測試報告
+\input{testreport/testreport.tex}
 
 \end{document}

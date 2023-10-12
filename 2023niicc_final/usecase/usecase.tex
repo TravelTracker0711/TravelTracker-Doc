@@ -1,8 +1,25 @@
+\newcounter{UCcounter}
+\setcounter{UCcounter}{0}
+
+\makeatletter
+\newcommand{\autolabelUC}[1]{
+  \stepcounter{UCcounter}
+  \ifnum\value{UCcounter}<10
+    \protected@edef\@currentlabel{TT-UC-0\arabic{UCcounter}}
+  \else
+    \protected@edef\@currentlabel{TT-UC-\arabic{UCcounter}}
+  \fi
+  \hspace*{-0.7em}
+  \textbf{\@currentlabel}
+  \label{#1}
+}
+\makeatother
+
 \section{一般性的系統功能操作使用案例之劇本(Scenario)}
 
 \begin{longtable}{|l|p{13.25cm}|}
   \hline
-  \textbf{使用者案例} & \textbf{TT-UC-01} \\
+  \textbf{使用者案例} & \autolabelUC{軌跡和資料記錄} \\
   \hline
   \textbf{案例名稱} & 軌跡和資料記錄 \\
   \hline
@@ -29,11 +46,11 @@
 
 \begin{longtable}{|l|p{13.25cm}|}
   \hline
-  \textbf{使用者案例} & \textbf{TT-UC-02} \\
+  \textbf{使用者案例} & \autolabelUC{檢視旅遊資料} \\
   \hline
   \textbf{案例名稱} & 檢視旅遊資料 \\
   \hline
-  \textbf{相關功能性需求} & 軌跡上顯示旅遊資料、地圖旁以時間軸方式顯示旅遊資料、格狀顯示旅遊資料、條列式詳細顯示旅遊資料、檢視個別旅遊資料 \\
+  \textbf{相關功能性需求} & \ref{軌跡上顯示旅遊資料}、\ref{地圖旁以時間軸方式顯示旅遊資料}、\ref{切換圖庫顯示旅遊資料頁面}、\ref{檢視個別旅遊資料} \\
   \hline
   \textbf{使用者} & 一般使用者 \\
   \hline
@@ -55,39 +72,39 @@
   \hline
 \end{longtable}
 
-\begin{longtable}{|l|p{13.25cm}|}
-  \hline
-  \textbf{使用者案例} & \textbf{TT-UC-03} \\
-  \hline
-  \textbf{案例名稱} & 軌跡管理 \\
-  \hline
-  \textbf{相關功能性需求} & 軌跡平滑化、拉伸軌跡、偵測軌跡停留位置並簡化 \\
-  \hline
-  \textbf{使用者} & 一般使用者 \\
-  \hline
-  \textbf{前置條件} & 使用者已記錄完軌跡。 \\
-  \hline
-  \textbf{說明} & 使用者可以對已經記錄的軌跡進行平滑化、拉伸或是偵測軌跡停留位置並簡化。 \\
-  \hline
-  \textbf{描述(操作流程)} & 
-  1. 使用者選擇已記錄的軌跡。\newline
-  2. 使用者選擇平滑化軌跡。\newline
-  3. 使用者選擇拉伸軌跡。\newline
-  4. 若平滑化軌跡後軌跡有雜亂的點，使用者可以選擇偵測軌跡停留位置並將雜亂的軌跡路線簡化成一個點。 \\
-  \hline
-  \textbf{例外處理} & 使用者沒有記錄軌跡，則系統應提示「無軌跡」。 \\
-  \hline
-  \textbf{測試方案} & 測試不輸入軌跡，確保所有修改功能對使用者顯示對應之提示。 \\
-  \hline
-\end{longtable}
+% \begin{longtable}{|l|p{13.25cm}|}
+%   \hline
+%   \textbf{使用者案例} & \textbf{TT-UC-03} \\
+%   \hline
+%   \textbf{案例名稱} & 軌跡管理 \\
+%   \hline
+%   \textbf{相關功能性需求} & 軌跡平滑化、拉伸軌跡、偵測軌跡停留位置並簡化 \\
+%   \hline
+%   \textbf{使用者} & 一般使用者 \\
+%   \hline
+%   \textbf{前置條件} & 使用者已記錄完軌跡。 \\
+%   \hline
+%   \textbf{說明} & 使用者可以對已經記錄的軌跡進行平滑化、拉伸或是偵測軌跡停留位置並簡化。 \\
+%   \hline
+%   \textbf{描述(操作流程)} & 
+%   1. 使用者選擇已記錄的軌跡。\newline
+%   2. 使用者選擇平滑化軌跡。\newline
+%   3. 使用者選擇拉伸軌跡。\newline
+%   4. 若平滑化軌跡後軌跡有雜亂的點，使用者可以選擇偵測軌跡停留位置並將雜亂的軌跡路線簡化成一個點。 \\
+%   \hline
+%   \textbf{例外處理} & 使用者沒有記錄軌跡，則系統應提示「無軌跡」。 \\
+%   \hline
+%   \textbf{測試方案} & 測試不輸入軌跡，確保所有修改功能對使用者顯示對應之提示。 \\
+%   \hline
+% \end{longtable}
 
 \begin{longtable}{|l|p{13.25cm}|}
   \hline
-  \textbf{使用者案例} & \textbf{TT-UC-04} \\
+  \textbf{使用者案例} & \autolabelUC{旅遊資料管理} \\
   \hline
   \textbf{案例名稱} & 旅遊資料管理 \\
   \hline
-  \textbf{相關功能性需求} & 編輯旅遊資料的標籤、編輯旅遊資料的日期、刪除旅遊資料、批量處理旅遊資料、與AI對話來選取並編輯與刪除旅遊資料、AI自動辨識並標記照片 \\
+  \textbf{相關功能性需求} & \ref{編輯旅遊資料的標籤}、\ref{編輯旅遊資料的日期}、\ref{刪除旅遊資料}、\ref{與AI對話來選取並編輯與刪除旅遊資料}、\ref{AI自動辨識並標記照片} \\
   \hline
   \textbf{使用者} & 一般使用者 \\
   \hline
@@ -99,10 +116,9 @@
   1. 使用者選擇旅遊資料。\newline
   2. 使用者編輯標籤和日期。\newline
   3. 使用者刪除旅遊資料。\newline
-  4. 使用者批量處理旅遊資料。\newline
-  5. 使用者與AI對話來選取、編輯或刪除資料。\newline
-  6. AI自動辨識並標記照片。\newline
-  7. 使用者在搜尋欄中搜尋已標記的照片。 \\
+  4. 使用者與AI對話來選取、編輯或刪除資料。\newline
+  5. AI自動辨識並標記照片。\newline
+  6. 使用者在搜尋欄中搜尋已標記的照片。 \\
   \hline
   \textbf{例外處理} & 若資料缺失、系統無法正確解析或AI無法辨別標記照片，則應提供適當的錯誤訊息。 \\
   \hline
