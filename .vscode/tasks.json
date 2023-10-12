@@ -4,14 +4,14 @@
     {
       "label": "build latex",
       "type": "shell",
-      "command": "docker run --rm -v %cd%:/data/ moss/xelatex make",
-      "problemMatcher": []
-    },
-    {
-      "label": "latex word count",
-      "type": "shell",
-      "command": "docker run --rm -v %cd%:/data/ latex-word-count make word-count",
+      "command": "docker run --rm -v ${workspaceFolder}:/data/ -w /data/2023niicc_final moss/xelatex make",
       "problemMatcher": []
     }
+    // {
+    //   "label": "latex word count",
+    //   "type": "shell",
+    //   "command": "docker run --rm -v %cd%:/data/ latex-word-count make word-count",
+    //   "problemMatcher": []
+    // }
   ]
 }

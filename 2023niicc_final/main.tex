@@ -10,7 +10,15 @@
 \usepackage{type1cm} % 設定字體大小
 \usepackage{xeCJK} % 中文字體
 % \setCJKmainfont{Noto Sans TC}
-\setCJKmainfont{kaiu.ttf} % 標楷體
+\ifdefined\nosystemfont
+    \setCJKmainfont[
+        Path=../font/,
+        UprightFont={kaiu.ttf}
+    ]{標楷體}
+\else
+    \setCJKmainfont{kaiu.ttf} % 標楷體
+\fi
+
 
 % 套件區
 \usepackage{enumitem} % 列表 (enumerate, itemize)
