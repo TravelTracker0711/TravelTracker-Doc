@@ -1,0 +1,50 @@
+\newcounter{nfcounter}
+\setcounter{nfcounter}{0}
+
+\makeatletter
+\newcommand{\autolabelNF}[1]{
+  \stepcounter{nfcounter}
+  \ifnum\value{nfcounter}<10
+    \protected@edef\@currentlabel{TT-NF-0\arabic{nfcounter}}
+  \else
+    \protected@edef\@currentlabel{TT-NF-\arabic{nfcounter}}
+  \fi
+  \hspace*{-0.7em}
+  \@currentlabel
+  \label{#1}
+}
+\makeatother
+
+\section{系統非功能需求}
+\begin{longtable}{|c|p{5.2cm}|p{7.5cm}|}
+  \hline
+  \textbf{非功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{非功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endhead
+  \autolabelNF{快速記錄} & 快速記錄 & 桌面小工具要取得快速、操作簡單明瞭方便 \\
+  \hline
+  \autolabelNF{大型資料處理效率} & 大型資料處理效率 & 系統要能處理大型媒體檔案不會當機的效能 \\
+  \hline
+  \autolabelNF{使用者界面} & 使用者界面 & 系統界面必須直覺易用，方便使用者操作和理解。視覺設計需統一並符合現代化的美學標準。 \\
+  \hline
+  \autolabelNF{可用性} & 可用性 & 系統應具備高可用性，保證穩定的運行。所有功能都應在普通網絡條件下迅速響應。 \\
+  \hline
+  \autolabelNF{安全性} & 安全性 & 所有個人和旅遊相關資料必須安全存儲，並符合相關隱私法規。應用程式應具有適當的權限管理，防止未經授權的訪問。 \\
+  \hline
+  \autolabelNF{兼容性} & 兼容性 & 應用程式應支援主流的移動操作系統和版本。地圖和多媒體資料應在不同的裝置和解析度上正常顯示。 \\
+  \hline
+  \autolabelNF{地圖視圖控制} & 地圖視圖控制 & 系統應支援不同地圖主題和樣式的切換。定位功能必須精確且迅速反應。 \\
+  \hline
+  \autolabelNF{資料匯入、匯出} & 資料匯入、匯出 & 資料匯入和匯出應支援通用格式，如CSV、GPX等。匯入功能應能自動識別和配對相關媒體和軌跡。 \\
+  \hline
+  \autolabelNF{旅程管理} & 旅程管理 & 旅程切換和管理應流暢且直覺，支援多旅程同時記錄和顯示。提供完整的旅程統計資訊，如總距離、時間等。 \\
+  \hline
+  \autolabelNF{桌面小工具} & 桌面小工具 & 桌面小工具需提供快速記錄和查看功能，並且操作簡單明瞭方便。 \\
+  \hline
+  \autolabelNF{AI 功能} & AI 功能 & AI對話和自動辨識功能應準確並能有效協助使用者進行篩選、編輯等操作。 \\
+  \hline
+\end{longtable}
