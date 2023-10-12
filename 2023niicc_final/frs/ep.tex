@@ -1,0 +1,33 @@
+\newcounter{EPcounter}
+\setcounter{EPcounter}{0}
+
+\makeatletter
+\newcommand{\autolabelEP}[1]{
+  \stepcounter{EPcounter}
+  \ifnum\value{EPcounter}<10
+    \protected@edef\@currentlabel{TT-F-EP-0\arabic{EPcounter}}
+  \else
+    \protected@edef\@currentlabel{TT-F-EP-\arabic{EPcounter}}
+  \fi
+  \hspace*{-0.7em}
+  \@currentlabel
+  \label{#1}
+}
+\makeatother
+
+\subsection{資料匯入、匯出 EP}
+
+\begin{longtable}{|c|p{4.3cm}|p{8.9cm}|}
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endhead
+  \autolabelEP{匯出旅程、軌跡、旅遊資料} & 匯出旅程、軌跡、旅遊資料 & 允許使用者將各式資料匯出為特定格式的檔案 \\
+  \hline
+  \autolabelEP{匯入旅程、軌跡、旅遊資料} & 匯入旅程、軌跡、旅遊資料 & 允許使用者將各式資料匯入，並且能根據軌跡的時間戳記從手機內自動讀取相應的媒體 \\
+  \hline
+\end{longtable}

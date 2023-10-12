@@ -1,0 +1,44 @@
+\newcounter{TMcounter}
+\setcounter{TMcounter}{0}
+
+\makeatletter
+\newcommand{\autolabelTM}[1]{
+  \stepcounter{TMcounter}
+  \ifnum\value{TMcounter}<10
+    \protected@edef\@currentlabel{TT-TM-0\arabic{TMcounter}}
+  \else
+    \protected@edef\@currentlabel{TT-TM-\arabic{TMcounter}}
+  \fi
+  \hspace*{-0.7em}
+  \@currentlabel
+  \label{#1}
+}
+\makeatother
+
+\subsection{旅程管理 TM}
+\begin{longtable}{|c|p{4.3cm}|p{8.9cm}|}
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
+  \hline
+  \endhead
+  \autolabelTM{創建新旅程} & 創建新旅程 & 允許使用者創建新的旅程 \\
+  \hline
+  \autolabelTM{切換目前記錄旅程} & 切換目前記錄旅程\footnote[1] & 允許使用者切換正在記錄的旅程 \\
+  \hline
+  \autolabelTM{切換目前顯示旅程} & 切換目前顯示旅程 & 允許使用者選擇目前正在顯示的旅程以方便查看 \\
+  \hline
+  \autolabelTM{一鍵回到目前旅程} & 一鍵回到目前旅程 & 允許使用者快速將當前記錄中的旅程做為顯示中的旅程 \\
+  \hline
+  \autolabelTM{旅程重新命名} & 旅程重新命名 & 允許使用者對旅程進行重新命名 \\
+  \hline
+  \autolabelTM{顯示旅程總距離、時間等等} & 顯示旅程總距離、時間等等 & 提供使用者查看旅程的總距離和時間等資訊，以便了解整體旅程的概況 \\
+  \hline
+\end{longtable}
+
+\footnotetext[1]{顯示中與記錄中的旅程是獨立的，為了讓使用者可以在記錄B旅遊時回去看A旅遊的資料}
+
+  
