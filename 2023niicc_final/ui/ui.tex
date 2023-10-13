@@ -7,18 +7,27 @@
 %   \label{s2}
 % \end{figure}
 
-\section{系統介面設計}
-
 \newcommand{\customsubfig}[2]{
-  % \hspace{0.005\textwidth}
-  \begin{subfigure}[t]{0.20\textwidth}
+  \hspace{0.005\textwidth}
+  \begin{subfigure}[t]{0.16\textwidth}
     \centering
     \includegraphics[width=\linewidth]{../assets/#1.png}
     \caption{#2}
     \label{#2}
   \end{subfigure}
-  % \hspace{0.005\textwidth}
+  \hspace{0.005\textwidth}
 }
+
+\section{系統介面設計}
+
+為了使介面簡潔易用，我們設計了兩個主要頁面，及多個底部彈出面板（Bottom sheet），提供更高效率的操作體驗。圖~\ref{主要頁面與面板}是我們設計的主要頁面與面板。
+
+\begin{itemize}
+  \item 主要頁面：透過地圖（圖~\ref{地圖頁面}）與圖庫（圖~\ref{圖庫頁面}）頁面的切換，讓使用者能輕鬆查看目前的軌跡或旅遊資料，旅遊資料會根據其位置與時間順序被聚合成資料群集點，避免畫面過於雜亂。
+  \item 同步資料顯示：透過主要頁面側邊的旅遊資料時間軸列表來同步兩個頁面所定位的資料群集。
+  \item 快速紀錄：在地圖上方提供多功能輸入欄，能讓使用者在途中快速記錄文字筆記、拍攝照片或錄製語音。
+  \item 底部彈出面板：讓使用者在不用切換頁面的情況下訪問各種功能，如獲取詳細資料（圖~\ref{旅程詳細資料面板}）、與AI對話（圖~\ref{AI對話面板}）、篩選資料（圖~\ref{旅遊資料篩選面板}）與管理所有旅程（圖~\ref{旅程管理面板}），並能在主要頁面即時看到資料更新情況。
+\end{itemize}
 
 \begin{figure}[H]
   \centering

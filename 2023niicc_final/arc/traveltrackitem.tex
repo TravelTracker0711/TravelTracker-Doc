@@ -1,0 +1,53 @@
+\subsection{旅程 TravelTrackItem}
+
+\subsubsection{旅程定義與說明}
+
+\begin{longtable}{|c|c|c|c|}
+  \hline
+  \textbf{欄位名稱} & \textbf{欄位代號} & \textbf{定義} & \textbf{型態} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{欄位名稱} & \textbf{欄位代號} & \textbf{定義} & \textbf{型態} \\
+  \hline
+  \endhead
+  
+  識別碼 & id & 用於唯一識別該旅行路線項目 & String \\
+  \hline
+  名稱 & name & 旅行路線的名稱或標題 & String \\
+  \hline
+  描述 & description & 旅行路線的詳細說明或簡介 & String \\
+  \hline
+  標籤 & tags & 與旅行路線相關的關鍵詞或分類 & Set<String> \\
+  \hline
+  建立時間 & createdTime & 該旅行路線項目的建立日期與時間 & DateTime \\
+  \hline
+  更新時間 & updatedTime & 該旅行路線項目最後一次更新的日期與時間 & DateTime \\
+  \hline
+\end{longtable}
+
+\subsubsection{旅程範例}
+
+\begin{longtable}{|c|c|c|}
+  \hline
+  \textbf{欄位名稱} & \textbf{範例 1} & \textbf{範例 2} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{欄位名稱} & \textbf{範例 1} & \textbf{範例 2} \\
+  \hline
+  \endhead
+  
+  id & TRACK001 & TRACK002 \\
+  \hline
+  name & 環島自由行 & 台北一日遊 \\
+  \hline
+  description & 台灣環島七日遊，體驗不一樣的風光 & 在台北市區走走逛逛，一天內感受都市魅力 \\
+  \hline
+  tags & \{"環島", "七日", "自由行"\} & \{"台北", "一日遊", "市區"\} \\
+  \hline
+  createdTime & 2023-10-01 09:00:00 & 2023-10-15 08:30:00 \\
+  \hline
+  updatedTime & 2023-10-07 21:00:00 & 2023-10-15 20:00:00 \\
+  \hline
+\end{longtable}

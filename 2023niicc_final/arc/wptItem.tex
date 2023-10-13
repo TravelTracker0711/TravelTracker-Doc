@@ -1,0 +1,69 @@
+\subsection{地點 WptItem}
+
+\subsubsection{地點定義與說明}
+
+\begin{longtable}{|c|c|c|c|}
+  \hline
+  \textbf{欄位名稱} & \textbf{欄位代號} & \textbf{定義} & \textbf{型態} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{欄位名稱} & \textbf{欄位代號} & \textbf{定義} & \textbf{型態} \\
+  \hline
+  \endhead
+  
+  識別碼 & id & 資料的唯一識別碼 & String \\
+  \hline
+  名稱 & name & 地點的名稱 & String \\
+  \hline
+  描述 & description & 地點的詳細說明 & String \\
+  \hline
+  標籤 & tags & 地點相關的標籤，用於篩選和搜尋 & Set<String> \\
+  \hline
+  建立時間 & createdTime & 地點建立的時間 & DateTime \\
+  \hline
+  更新時間 & updatedTime & 地點最後一次被更新的時間 & DateTime \\
+  \hline
+  緯度 & lat & 地點的緯度 & Double \\
+  \hline
+  經度 & lon & 地點的經度 & Double \\
+  \hline
+  海拔 & ele & 地點的海拔 & Double \\
+  \hline
+  管理識別碼 & relatedId & 使用或管理該點的資源識別碼 & String \\
+  \hline
+\end{longtable}
+
+\subsubsection{地點範例}
+
+\begin{longtable}{|c|c|c|}
+  \hline
+  \textbf{欄位名稱} & \textbf{範例 1} & \textbf{範例 2} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{欄位名稱} & \textbf{範例 1} & \textbf{範例 2} \\
+  \hline
+  \endhead
+  
+  id & WPT001 & WPT002 \\
+  \hline
+  name & 臺北101 & 西門町 \\
+  \hline
+  description & 台灣最高的大樓 & 台北的購物和娛樂區 \\
+  \hline
+  tags & \{"地標", "商業"\} & \{"購物", "娛樂"\} \\
+  \hline
+  createdTime & 2023-10-10 12:34:56 & 2023-10-13 14:56:00 \\
+  \hline
+  updatedTime & 2023-10-11 15:30:00 & 2023-10-13 18:20:00 \\
+  \hline
+  lat & 25.0330 & 25.0418 \\
+  \hline
+  lon & 121.5654 & 121.5081 \\
+  \hline
+  ele & 508 & 10 \\
+  \hline
+  relatedId & TRACK001 & TRACK002 \\
+  \hline
+\end{longtable}

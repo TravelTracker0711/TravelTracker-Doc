@@ -1,0 +1,60 @@
+\subsection{資產 AssetItem}
+
+\subsubsection{資產定義與說明}
+
+\begin{longtable}{|c|c|c|c|}
+  \hline
+  \textbf{欄位名稱} & \textbf{欄位代號} & \textbf{定義} &\textbf{型態} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{欄位名稱} & \textbf{欄位代號} & \textbf{定義} &\textbf{型態} \\
+  \hline
+  \endhead
+  識別碼 & id & 資料的唯一識別碼 & String \\
+  \hline
+  名稱 & name & 資產的名稱 & String \\
+  \hline
+  描述 & description & 資產的詳細說明 & String \\
+  \hline
+  標籤 & tags & 資產相關的標籤，用於分類和搜尋 & Set<String> \\
+  \hline
+  建立時間 & createdTime & 資產建立的時間 & DateTime \\
+  \hline
+  更新時間 & updatedTime & 資產最後一次被更新的時間 & DateTime \\
+  \hline
+  類型 & type & 資產的類型（如：影像、文件等） & String \\
+  \hline
+  管理識別碼 & relatedId & 使用或管理該資產的資源識別碼 & String \\
+  \hline
+\end{longtable}
+
+\subsubsection{資產範例}
+
+\begin{longtable}{|c|c|c|}
+  \hline
+  \textbf{欄位名稱} & \textbf{範例 1} & \textbf{範例 2} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{欄位名稱} & \textbf{範例 1} & \textbf{範例 2} \\
+  \hline
+  \endhead
+  
+  id & ASSET101 & ASSET102 \\
+  \hline
+  name & 西門町 & 士林夜市 \\
+  \hline
+  description & 台北市熱鬧的購物和娛樂區 & 台北著名的大型夜市 \\
+  \hline
+  tags & \{"人潮", "娛樂", "觀光"\} & \{"夜市", "美食"\} \\
+  \hline
+  createdTime & 2023-10-10 09:30:00 & 2023-10-11 10:45:00 \\
+  \hline
+  updatedTime & 2023-10-10 15:00:00 & 2023-10-11 18:00:00 \\
+  \hline
+  type & image & image \\
+  \hline
+  relatedId & TRACK002 & TRACK002 \\
+  \hline
+\end{longtable}
