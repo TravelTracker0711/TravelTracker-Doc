@@ -6,7 +6,7 @@ filename=main
 base-info= \
 \def\nosystemfont{} \
 
-make: pdf clean-tmp
+make: pdf 
 
 pdf: 
 	xelatex "${base-info}\input{${filename}}"
