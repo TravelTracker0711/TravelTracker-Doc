@@ -1,19 +1,4 @@
-\newcounter{MCcounter}
-\setcounter{MCcounter}{0}
-
-\makeatletter
-\newcommand{\autolabelMC}[1]{
-  \stepcounter{MCcounter}
-  \ifnum\value{MCcounter}<10
-    \protected@edef\@currentlabel{TT-F-MC-0\arabic{MCcounter}}
-  \else
-    \protected@edef\@currentlabel{TT-F-MC-\arabic{MCcounter}}
-  \fi
-  \hspace*{-0.7em}
-  \@currentlabel
-  \label{#1}
-}
-\makeatother
+\newAutoLabel{TT-F-MC}
 
 \subsection{地圖視圖控制 MC}
 
@@ -26,14 +11,14 @@
   \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
   \hline
   \endhead
-  \autolabelMC{基礎控制動作} & 基礎控制動作 & 使用者可以縮放、移動、旋轉地圖 \\
+  \autoLabel{基礎控制動作} & 基礎控制動作 & 使用者可以縮放、移動、旋轉地圖 \\
   \hline
-  \autolabelMC{定位至目前位置} & 定位至目前位置 & 讓使用者能快速定位到當前位置 \\
+  \autoLabel{定位至目前位置} & 定位至目前位置 & 讓使用者能快速定位到當前位置 \\
   \hline
-  \autolabelMC{定位至指定軌跡} & 定位至指定軌跡 & 允許使用者快速定位至特定軌跡 \\
+  \autoLabel{定位至指定軌跡} & 定位至指定軌跡 & 允許使用者快速定位至特定軌跡 \\
   \hline
-  \autolabelMC{定位至指定旅遊資料} & 定位至指定旅遊資料 & 允許使用者快速定位至特定旅遊資料 \\
+  \autoLabel{定位至指定旅遊資料} & 定位至指定旅遊資料 & 允許使用者快速定位至特定旅遊資料 \\
   \hline
-  \autolabelMC{地圖樣式選擇} & 地圖樣式選擇 & 使用者可以選擇不同的地圖主題和樣式，如魯地圖、OpenStreetMap、夜間模式、衛星圖像等 \\
+  \autoLabel{地圖樣式選擇} & 地圖樣式選擇 & 使用者可以選擇不同的地圖主題和樣式，如魯地圖、OpenStreetMap、夜間模式、衛星圖像等 \\
   \hline
 \end{longtable}

@@ -1,19 +1,4 @@
-\newcounter{TMcounter}
-\setcounter{TMcounter}{0}
-
-\makeatletter
-\newcommand{\autolabelTM}[1]{
-  \stepcounter{TMcounter}
-  \ifnum\value{TMcounter}<10
-    \protected@edef\@currentlabel{TT-TM-0\arabic{TMcounter}}
-  \else
-    \protected@edef\@currentlabel{TT-TM-\arabic{TMcounter}}
-  \fi
-  \hspace*{-0.7em}
-  \@currentlabel
-  \label{#1}
-}
-\makeatother
+\newAutoLabel{TT-TM}
 
 \subsection{旅程管理 TM}
 \begin{longtable}{|c|p{4.3cm}|p{8.9cm}|}
@@ -25,11 +10,11 @@
   \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
   \hline
   \endhead
-  \autolabelTM{創建新旅程} & 創建新旅程 & 允許使用者創建新的旅程 \\
+  \autoLabel{創建新旅程} & 創建新旅程 & 允許使用者創建新的旅程 \\
   \hline
-  \autolabelTM{切換目前記錄旅程} & 切換目前記錄旅程\footnote[1] & 允許使用者切換正在記錄的旅程 \\
+  \autoLabel{切換目前記錄旅程} & 切換目前記錄旅程\footnote[1] & 允許使用者切換正在記錄的旅程 \\
   \hline
-  \autolabelTM{切換各個旅程的可見性} & 切換各個旅程的可見性 & 允許使用者切換各個旅程的可見性以方便查看 \\
+  \autoLabel{切換各個旅程的可見性} & 切換各個旅程的可見性 & 允許使用者切換各個旅程的可見性以方便查看 \\
   \hline
 \end{longtable}
 

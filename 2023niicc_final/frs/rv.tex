@@ -1,19 +1,4 @@
-\newcounter{RVcounter}
-\setcounter{RVcounter}{0}
-
-\makeatletter
-\newcommand{\autolabelRV}[1]{
-  \stepcounter{RVcounter}
-  \ifnum\value{RVcounter}<10
-    \protected@edef\@currentlabel{TT-RV-0\arabic{RVcounter}}
-  \else
-    \protected@edef\@currentlabel{TT-RV-\arabic{RVcounter}}
-  \fi
-  \hspace*{-0.7em}
-  \@currentlabel
-  \label{#1}
-}
-\makeatother
+\newAutoLabel{TT-RV}
 
 \subsection{檢視軌跡與旅遊資料 RV}
 
@@ -26,24 +11,24 @@
   \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
   \hline
   \endhead
-  \autolabelRV{地圖上顯示軌跡} & 地圖上顯示軌跡 & 在地圖上展示使用者的旅程軌跡 \\
+  \autoLabel{地圖上顯示軌跡} & 地圖上顯示軌跡 & 在地圖上展示使用者的旅程軌跡 \\
   \hline
-  \autolabelRV{檢視旅程、軌跡的統計資料} & 檢視旅程、軌跡的統計資料 & 檢視總距離、時間、速度等統計資料 \\
+  \autoLabel{檢視旅程、軌跡的統計資料} & 檢視旅程、軌跡的統計資料 & 檢視總距離、時間、速度等統計資料 \\
   \hline
-  \autolabelRV{軌跡上顯示旅遊資料} & 軌跡上顯示旅遊資料 & 軌跡上顯示旅遊相關資料，如照片、影片、文字等 \\
+  \autoLabel{軌跡上顯示旅遊資料} & 軌跡上顯示旅遊資料 & 軌跡上顯示旅遊相關資料，如照片、影片、文字等 \\
   \hline
-  \autolabelRV{軌跡上旅遊資料會以群集顯示} & 軌跡上旅遊資料會以群集顯示 & 將地圖上距離近的旅遊資料集中成一個群集 \\
+  \autoLabel{軌跡上旅遊資料會以群集顯示} & 軌跡上旅遊資料會以群集顯示 & 將地圖上距離近的旅遊資料集中成一個群集 \\
   \hline
-  \autolabelRV{地圖旁以時間軸方式顯示旅遊資料} & 地圖旁以時間軸方式顯示旅遊資料 & 旅遊資料以時間軸形式展示，方便查看 \\
+  \autoLabel{地圖旁以時間軸方式顯示旅遊資料} & 地圖旁以時間軸方式顯示旅遊資料 & 旅遊資料以時間軸形式展示，方便查看 \\
   \hline
-  \autolabelRV{切換圖庫顯示旅遊資料頁面} & 切換圖庫顯示旅遊資料頁面 & 使用者能切換至圖庫頁面檢視旅遊資料 \\
+  \autoLabel{切換圖庫顯示旅遊資料頁面} & 切換圖庫顯示旅遊資料頁面 & 使用者能切換至圖庫頁面檢視旅遊資料 \\
   \hline
-  \autolabelRV{檢視個別旅遊資料} & 檢視個別旅遊資料 & 查看單一旅遊資料的詳細資訊 \\
+  \autoLabel{檢視個別旅遊資料} & 檢視個別旅遊資料 & 查看單一旅遊資料的詳細資訊 \\
   \hline
-  \autolabelRV{利用標籤、日期等項目篩選旅遊資料} & 利用標籤、日期等項目篩選旅遊資料 & 根據日期、標籤等條件篩選和搜尋旅遊資料 \\
+  \autoLabel{利用標籤、日期等項目篩選旅遊資料} & 利用標籤、日期等項目篩選旅遊資料 & 根據日期、標籤等條件篩選和搜尋旅遊資料 \\
   \hline
-  \autolabelRV{用地理位置篩選旅遊資料} & 用地理位置篩選旅遊資料 & 一次選取某個位置周圍的旅遊資料 \\
+  \autoLabel{用地理位置篩選旅遊資料} & 用地理位置篩選旅遊資料 & 一次選取某個位置周圍的旅遊資料 \\
   \hline
-  \autolabelRV{與AI對話來篩選旅遊資料} & 與AI對話來篩選旅遊資料 & 通過AI對話界面協助篩選旅遊資料 \\
+  \autoLabel{與AI對話來篩選旅遊資料} & 與AI對話來篩選旅遊資料 & 通過AI對話界面協助篩選旅遊資料 \\
   \hline
 \end{longtable}
