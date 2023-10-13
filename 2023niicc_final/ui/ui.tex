@@ -1,1 +1,33 @@
+% \begin{figure}[H]
+%   \centering
+%   % \href{https://raw.githubusercontent.com/programingtw/proglearn-plan/main/img/testboard.png}{ 
+%     \includegraphics[width=0.8\textwidth]{../assets/s2.png}
+%   % }
+%   \caption{影片查看進度頁面}
+%   \label{s2}
+% \end{figure}
+
 \section{系統介面設計}
+
+\newcommand{\customsubfig}[2]{
+  % \hspace{0.005\textwidth}
+  \begin{subfigure}[t]{0.20\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/#1.png}
+    \caption{#2}
+    \label{#2}
+  \end{subfigure}
+  % \hspace{0.005\textwidth}
+}
+
+\begin{figure}[H]
+  \centering
+  \customsubfig{地圖頁面}{地圖頁面}
+  \customsubfig{圖庫頁面}{圖庫頁面}
+  \customsubfig{旅程詳細資料面板-統計資料}{旅程詳細資料面板}
+  \customsubfig{AI對話面板-聊天}{AI對話面板}
+  \customsubfig{旅遊資料篩選面板}{旅遊資料篩選面板}
+  \customsubfig{旅程管理面板}{旅程管理面板}
+  \caption{主要頁面與面板}
+  \label{主要頁面與面板}
+\end{figure}

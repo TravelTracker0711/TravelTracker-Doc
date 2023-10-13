@@ -28,7 +28,7 @@
 \usepackage{enumitem} % 列表 (enumerate, itemize)
 \usepackage{array} % 表格
 \usepackage{makecell} % 表格換行
-\usepackage{graphicx} % 圖片
+
 \usepackage{longtable} % 長表格
 \usepackage{indentfirst} % 自動首行縮排
 \usepackage{fancyhdr} % 頁首頁尾
@@ -37,6 +37,11 @@
 \usepackage{collcell}
 \usepackage{etoolbox} % 用 gappto 累積一個指令
 \usepackage{keyval} % 參數的 key-value 對
+
+\usepackage{graphicx} % 圖片
+\usepackage{caption} % 圖片標題
+\usepackage{subcaption} % 圖片子標題
+\captionsetup[figure]{name={圖},labelsep=period}
 
 % 使用 hyperref 並設定
 \usepackage[unicode=true,pdfusetitle,
@@ -54,7 +59,6 @@
 
 % tikz 設定
 % \tikzset{every state, accepting/.style={double distance=2pt}}
-% \captionsetup[figure]{labelfont={bf},name={圖},labelsep=period}
 % \usetikzlibrary{automata, positioning, arrows}
 
 % fancyhdr 設定
