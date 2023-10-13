@@ -5,9 +5,9 @@
 \newcommand{\autolabelRC}[1]{
   \stepcounter{RCcounter}
   \ifnum\value{RCcounter}<10
-    \protected@edef\@currentlabel{TT-RC-0\arabic{RCcounter}}
+    \protected@edef\@currentlabel{\mbox{TT-RC-0\arabic{RCcounter}}}
   \else
-    \protected@edef\@currentlabel{TT-RC-\arabic{RCcounter}}
+    \protected@edef\@currentlabel{\mbox{TT-RC-\arabic{RCcounter}}}
   \fi
   \hspace*{-0.7em}
   \@currentlabel
