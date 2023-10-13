@@ -16,13 +16,18 @@
 \usepackage{enumitem} % 列表 (enumerate, itemize)
 \usepackage{array} % 表格
 \usepackage{makecell} % 表格換行
-\usepackage{graphicx} % 圖片
+
 \usepackage{longtable} % 長表格
 \usepackage{indentfirst} % 自動首行縮排
 \usepackage{fancyhdr} % 頁首頁尾
 \usepackage{lastpage} % 最後一頁的頁數
 \renewcommand{\arraystretch}{1.45} % 表格行高
 \usepackage{collcell}
+
+\usepackage{graphicx} % 圖片
+\usepackage{caption} % 圖片標題
+\usepackage{subcaption} % 圖片子標題
+\captionsetup[figure]{name={圖},labelsep=period}
 
 % 使用 hyperref 並設定
 \usepackage[unicode=true,pdfusetitle,
@@ -40,7 +45,6 @@
 
 % tikz 設定
 % \tikzset{every state, accepting/.style={double distance=2pt}}
-% \captionsetup[figure]{labelfont={bf},name={圖},labelsep=period}
 % \usetikzlibrary{automata, positioning, arrows}
 
 % fancyhdr 設定
