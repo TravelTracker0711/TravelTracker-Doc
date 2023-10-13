@@ -10,5 +10,24 @@
 }
 
 \customfig{UML-Entity}{Entity 類別關係圖}
-\customfig{UML-Repository}{Repository 類別關係圖}
+
+\begin{itemize}
+  \item TravelDataConfig, TravelTrack, Trkseg, Asset 和 Wpt：這些實體描述了旅行相關的數據。其中，TravelDataConfig是描述資料的基礎配置；TravelTrack是完整的旅程，包含了多個Trkseg（軌跡）和Asset（旅遊資料）；Trkseg是一段旅遊軌跡，包含了多個Wpt（路點）。
+  \item AssetType：定義了不同的資產類型，如圖片、視頻、音頻、文字或是未知。
+\end{itemize}
+
 \customfig{UML-DataSource}{DataSource 類別關係圖}
+
+\begin{itemize}
+  \item DataSource 和 DataSourceItem：這部分定義了一個抽象的數據源，其中包含了基本的CRUD操作（創建、讀取、更新和刪除）。DataSourceItem是每個存儲在數據源中的項目的基礎，並有一個id。
+  \item InMemoryDataSource：是DataSource的具體實現，用於在記憶體中存儲資料。它提供了兩個額外的方法，isMatch 和 postProcessRead，可以讓實作的類別覆寫匹配邏輯與後處理讀取結果。
+  \item TravelTrackItem 和 TravelTrackItemCriteria：TravelTrackItem是具有名稱、描述、標籤和時間戳的特定項目。而TravelTrackItemCriteria是用於搜索特定條目的條件或過濾器。
+\end{itemize}
+
+\customfig{UML-Repository}{Repository 類別關係圖}
+
+\begin{itemize}
+  \item Repository 和 DataSource：Repository是一個抽象層，允許進行CRUD操作，而DataSource是其下一層的具體存儲實現。Repository是用於業務邏輯和數據存取的橋樑。
+  \item TravelTrackRepository：是具體的Repository實現，用於TravelTrack的CRUD操作。它有多個InMemory DataSources來管理不同的項目（例如TravelTrackItem、TrksegItem等）。
+  \item TravelTrackItemConverter：這是用於將TravelTrack和DataSource的Items類別互相轉換的工具。
+\end{itemize}
