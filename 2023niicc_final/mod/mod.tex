@@ -1,1 +1,14 @@
 \section{軟體或硬體模組設計}
+
+\newcommand{\customfig}[2]{
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{../assets/#1.png}
+    \caption{#2}
+    \label{#2}
+  \end{figure}
+}
+
+\customfig{UML-Entity}{Entity 類別關係圖}
+\customfig{UML-Repository}{Repository 類別關係圖}
+\customfig{UML-DataSource}{DataSource 類別關係圖}
