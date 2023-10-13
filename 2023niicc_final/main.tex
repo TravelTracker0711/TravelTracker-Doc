@@ -10,7 +10,15 @@
 \usepackage{type1cm} % 設定字體大小
 \usepackage{xeCJK} % 中文字體
 % \setCJKmainfont{Noto Sans TC}
-\setCJKmainfont{kaiu.ttf} % 標楷體
+\ifdefined\nosystemfont
+    \setCJKmainfont[
+        Path=../font/,
+        UprightFont={kaiu.ttf}
+    ]{標楷體}
+\else
+    \setCJKmainfont{kaiu.ttf} % 標楷體
+\fi
+
 
 % 套件區
 \usepackage{enumitem} % 列表 (enumerate, itemize)
@@ -23,6 +31,8 @@
 \usepackage{lastpage} % 最後一頁的頁數
 \renewcommand{\arraystretch}{1.45} % 表格行高
 \usepackage{collcell}
+\usepackage{etoolbox} % 用 gappto 累積一個指令
+\usepackage{keyval} % 參數的 key-value 對
 
 \usepackage{graphicx} % 圖片
 \usepackage{caption} % 圖片標題
