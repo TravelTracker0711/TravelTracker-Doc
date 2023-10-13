@@ -1,14 +1,14 @@
 \subsubsection{測試結果}
 
-\newAutoLabel{TT-TC}
+\newAutoLabel{TT-DT}
 
-\begin{longtable}{|c|c|p{8.9cm}|}
+\begin{longtable}{|c|c|c|}
   \hline
-  \textbf{測試案例編號} & \textbf{測試結果 (pass/fail)} & \textbf{測試案例備註} \\
+  \textbf{測試案例編號} & \textbf{測試結果 (pass/fail)} & \textbf{測試案例缺失編號} \\
   \hline
   \endfirsthead
   \hline
-  \textbf{測試案例編號} & \textbf{測試結果 (pass/fail)} & \textbf{測試案例備註} \\
+  \textbf{測試案例編號} & \textbf{測試結果 (pass/fail)} & \textbf{測試案例缺失編號} \\
   \hline
   \endhead
   \ref{軌跡記錄功能測試} & pass & \\ 
@@ -21,7 +21,7 @@
   \hline
   \ref{文字記錄功能測試} & pass & \\ 
   \hline
-  \ref{快速紀錄文字資料測試} & pass & \\ 
+  \ref{快速紀錄文字資料測試} & pass & \autoLabel{快速紀錄文字資料測試缺失報告} \\ 
   \hline
   \ref{顯示旅程及軌跡測試} & pass & \\ 
   \hline
@@ -45,17 +45,37 @@
   \hline
   \ref{地圖控制測試} & pass & \\ 
   \hline
-  \rowcolor{orange!25} \ref{定位至指定軌跡測試} & fail &  \\ 
+  \rowcolor{orange!25} \ref{定位至指定軌跡測試} & fail & \autoLabel{定位至指定軌跡測試缺失報告} \\ 
   \hline
-  \rowcolor{orange!25} \ref{定位至指定旅遊資料測試} & fail &  \\ 
+  \rowcolor{orange!25} \ref{定位至指定旅遊資料測試} & fail & \autoLabel{定位至指定旅遊資料測試缺失報告} \\ 
   \hline
   \ref{匯出軌跡圖測試} & pass & \\ 
   \hline
   \ref{分享測試} & pass & \\ 
   \hline
-  \ref{AI 功能測試} & pass & \\ 
+  \ref{AI 功能測試} & pass & \autoLabel{AI 功能測試缺失報告} \\ 
   \hline
   測試案例透過率 & 90.90\% & \\
   \hline
 \end{longtable}
 
+\subsubsection{缺失報告}
+
+\begin{longtable}{|c|c|p{5cm}|c|c|}
+  \hline
+  \textbf{缺失編號} & \textbf{缺失嚴重性} & \textbf{缺失說明} &  \textbf{測試案例編號} & \textbf{修復狀態} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{缺失編號} & \textbf{缺失嚴重性} & \textbf{缺失說明} &  \textbf{測試案例編號} & \textbf{修復狀態} \\
+  \hline
+  \endhead
+  \ref{快速紀錄文字資料測試缺失報告} & 低 & 有時使用者輸入文字後並沒有正確記錄起來。 & \ref{快速紀錄文字資料測試} & Close \\
+  \hline
+  \rowcolor{orange!25} \ref{定位至指定軌跡測試缺失報告} & 高 & 定位功能無法準確導引至指定軌跡。 & \ref{定位至指定軌跡測試} & Open \\
+  \hline
+  \rowcolor{orange!25} \ref{定位至指定旅遊資料測試缺失報告} & 高 & 定位功能無法準確找到指定旅遊地點。 & \ref{定位至指定旅遊資料測試} & Open \\
+  \hline
+  \ref{AI 功能測試缺失報告} & 高 & AI 功能無法正確識別某些情境。 & \ref{AI 功能測試} & Close \\
+  \hline
+\end{longtable}
