@@ -2,7 +2,7 @@
 \setcounter{UCcounter}{0}
 
 \makeatletter
-\newcommand{\autolabelUC}[1]{
+\newcommand{\autoLabelUC}[1]{
   \stepcounter{UCcounter}
   \ifnum\value{UCcounter}<10
     \protected@edef\@currentlabel{TT-UC-0\arabic{UCcounter}}
@@ -31,7 +31,7 @@
   \gappto{\usecaseTable}{
     \begin{longtable}{|l|p{13.25cm}|}
       \hline
-      \textbf{使用者案例} & \autolabelUC{#1} \\
+      \textbf{使用者案例} & \autoLabelUC{#1} \\
       \hline
       \textbf{案例名稱} & #1 \\
       \hline

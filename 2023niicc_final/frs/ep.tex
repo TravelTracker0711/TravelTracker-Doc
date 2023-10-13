@@ -1,19 +1,4 @@
-\newcounter{EPcounter}
-\setcounter{EPcounter}{0}
-
-\makeatletter
-\newcommand{\autolabelEP}[1]{
-  \stepcounter{EPcounter}
-  \ifnum\value{EPcounter}<10
-    \protected@edef\@currentlabel{TT-F-EP-0\arabic{EPcounter}}
-  \else
-    \protected@edef\@currentlabel{TT-F-EP-\arabic{EPcounter}}
-  \fi
-  \hspace*{-0.7em}
-  \@currentlabel
-  \label{#1}
-}
-\makeatother
+\newAutoLabel{TT-F-EP}
 
 \subsection{資料匯入、匯出 EP}
 
@@ -26,12 +11,12 @@
   \textbf{功能需求編號} & \textbf{功能名稱} & \textbf{功能需求描述} \\
   \hline
   \endhead
-  \autolabelEP{匯出旅程、軌跡、旅遊資料} & 匯出旅程、軌跡、旅遊資料 & 允許使用者將各式資料匯出為特定格式的檔案 \\
+  \autoLabel{匯出旅程、軌跡、旅遊資料} & 匯出旅程、軌跡、旅遊資料 & 允許使用者將各式資料匯出為特定格式的檔案 \\
   \hline
-  \autolabelEP{匯入旅程、軌跡、旅遊資料} & 匯入旅程、軌跡、旅遊資料 & 允許使用者將各式資料匯入，並且能根據軌跡的時間戳記從手機內自動讀取相應的媒體 \\
+  \autoLabel{匯入旅程、軌跡、旅遊資料} & 匯入旅程、軌跡、旅遊資料 & 允許使用者將各式資料匯入，並且能根據軌跡的時間戳記從手機內自動讀取相應的媒體 \\
   \hline
-  \autolabelEP{匯出軌跡圖} & 匯出軌跡圖 & 允許使用者產生整個軌跡在地圖上的截圖 \\
+  \autoLabel{匯出軌跡圖} & 匯出軌跡圖 & 允許使用者產生整個軌跡在地圖上的截圖 \\
   \hline
-  \autolabelEP{分享到社群軟體} & 分享到社群軟體 & 允許使用者選擇照片，並將照片分享到社群軟體 \\
+  \autoLabel{分享到社群軟體} & 分享到社群軟體 & 允許使用者選擇照片，並將照片分享到社群軟體 \\
   \hline
 \end{longtable}

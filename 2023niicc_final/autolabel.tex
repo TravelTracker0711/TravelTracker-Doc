@@ -1,0 +1,22 @@
+\newcounter{autoLabelCounter}
+
+\makeatletter
+\newcommand{\autoLabel}[1]{
+  \stepcounter{autoLabelCounter}
+  \ifnum\value{autoLabelCounter}<10
+    \protected@edef\@currentlabel{\mbox{\labelPrefix-0\arabic{autoLabelCounter}}}
+  \else
+    \protected@edef\@currentlabel{\mbox{\labelPrefix-\arabic{autoLabelCounter}}}
+  \fi
+  \hspace*{-0.7em}
+  \@currentlabel
+  \label{#1}
+}
+\makeatother
+
+\newcommand\newAutoLabel[1]{
+    \setcounter{autoLabelCounter}{0}
+    \def\labelPrefix{#1}
+}
+
+\newAutoLabel{TT}
