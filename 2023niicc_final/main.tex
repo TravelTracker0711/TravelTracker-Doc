@@ -19,6 +19,10 @@
     \setCJKmainfont{kaiu.ttf} % 標楷體
 \fi
 
+% 設定首行縮排
+\newlength{\fullwidthspace}
+\setlength{\fullwidthspace}{2em}  % 定義兩個全形空白的長度為2em
+\setlength{\parindent}{\fullwidthspace}  % 設定段落首行縮排為兩個全形空白
 
 % 套件區
 \usepackage{enumitem} % 列表 (enumerate, itemize)
